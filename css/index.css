@@ -1,0 +1,482 @@
+:root {
+    --hero-image: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #150E0F;
+        --bg-alt: #1F1516;
+        --ink: #F6EFEE;
+        --muted: #B7A6A8;
+        --line: #33262770
+    }
+}
+
+:root[data-theme="dark"] {
+    --bg: #150E0F;
+    --bg-alt: #1F1516;
+    --ink: #F6EFEE;
+    --muted: #B7A6A8;
+    --line: #33262770
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+    scroll-behavior: smooth
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased
+}
+
+a {
+    color: inherit
+}
+
+:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 3px
+}
+
+.wrap {
+    width: min(1120px, 100% - 2.5rem);
+    margin-inline: auto
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background:
+        linear-gradient(100deg, rgba(142, 10, 18, .94) 0%, rgba(208, 17, 27, .78) 42%, rgba(20, 6, 8, .35) 100%),
+        var(--hero-image),
+        repeating-linear-gradient(90deg, #B90F18 0 90px, #C8121C 90px 180px);
+    background-size: cover;
+    background-position: center;
+}
+
+/* pitch line: halfway line + centre circle, shown while no image is set */
+.hero::before {
+    content: "";
+    position: absolute;
+    right: -12vmin;
+    top: 50%;
+    width: 92vmin;
+    height: 92vmin;
+    translate: 0 -50%;
+    border: 2px solid rgba(255, 255, 255, .22);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    right: calc(34vmin - 12vmin);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, .22);
+    pointer-events: none;
+}
+
+nav {
+    position: relative;
+    z-index: 2;
+    padding-top: 1.25rem
+}
+
+nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    text-decoration: none;
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: .02em
+}
+
+.crest {
+    height: 70px;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 500
+}
+
+nav ul a {
+    text-decoration: none;
+    opacity: .92;
+    padding: .25rem 0;
+    border-bottom: 2px solid transparent
+}
+
+nav ul a:hover {
+    border-color: #fff
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    padding: .9rem 1.6rem;
+    border-radius: 2px;
+    transition: transform .15s, background .15s, color .15s
+}
+
+.btn-white {
+    background: #fff;
+    color: var(--red-deep)
+}
+
+.btn-white:hover {
+    transform: translateY(-2px)
+}
+
+.btn-ghost {
+    border: 2px solid rgba(255, 255, 255, .8);
+    color: #fff
+}
+
+.btn-ghost:hover {
+    background: #fff;
+    color: var(--red-deep)
+}
+
+.btn-red {
+    background: var(--red);
+    color: #fff
+}
+
+.btn-red:hover {
+    background: var(--red-deep)
+}
+
+.hero-body {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 3rem 0 5rem
+}
+
+.hero h1 {
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 900;
+    line-height: .82;
+    text-transform: uppercase;
+    font-size: clamp(5rem, 21vw, 19rem);
+    letter-spacing: -.01em;
+}
+
+.hero h1 small {
+    display: block;
+    font-size: .3em;
+    letter-spacing: .06em;
+    line-height: 1;
+    margin-bottom: .15em;
+    font-weight: 700;
+    opacity: .92
+}
+
+.hero h1 span {
+    display: block;
+    animation: rise .9s cubic-bezier(.2, .8, .2, 1) both
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(40px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.hero p.lead {
+    max-width: 34ch;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    margin: 1.75rem 0 2rem;
+    opacity: .95
+}
+
+.cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .9rem
+}
+
+.matchbar {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    color: var(--ink);
+    border-top: 6px solid var(--red-deep)
+}
+
+.matchbar .wrap {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 1.1rem
+}
+
+.matchbar b {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1
+}
+
+.matchbar .teams {
+    font-family: var(--display);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1
+}
+
+.matchbar .teams i {
+    font-style: normal;
+    color: var(--red);
+    padding-inline: .5rem
+}
+
+.matchbar time {
+    color: var(--muted);
+    font-size: .95rem;
+    text-align: right
+}
+
+/* ---------- Sections ---------- */
+section.block {
+    padding: clamp(3.5rem, 8vw, 6.5rem) 0
+}
+
+section.alt {
+    background: var(--bg-alt)
+}
+
+h2 {
+    font-family: var(--display);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: .95;
+    margin: 0 0 2rem
+}
+
+.news {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 1.5rem
+}
+
+.card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--red);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem
+}
+
+.card.feature {
+    background: var(--red);
+    color: #fff;
+    border-color: var(--red-deep)
+}
+
+.card h3 {
+    font-family: var(--display);
+    font-size: 1.8rem;
+    line-height: 1;
+    margin: 0;
+    font-weight: 900;
+    text-transform: uppercase
+}
+
+.card p {
+    margin: 0;
+    color: var(--muted)
+}
+
+.card.feature p {
+    color: rgba(255, 255, 255, .9)
+}
+
+.card time {
+    font-size: .85rem;
+    font-weight: 700;
+    color: var(--red)
+}
+
+.card.feature time {
+    color: #fff
+}
+
+.card a {
+    margin-top: auto;
+    font-weight: 700;
+    padding-top: .75rem
+}
+
+.two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem)
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums
+}
+
+th,
+td {
+    padding: .75rem .5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line)
+}
+
+th {
+    font-size: .85rem;
+    color: var(--muted);
+    font-weight: 700
+}
+
+td.num,
+th.num {
+    text-align: right
+}
+
+tr.us td {
+    background: var(--red);
+    color: #fff;
+    font-weight: 700
+}
+
+.res {
+    display: grid;
+    grid-template-columns: 3.2rem 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: .9rem 0;
+    border-bottom: 1px solid var(--line)
+}
+
+.res .d {
+    color: var(--muted);
+    font-size: .9rem
+}
+
+.res .score {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 1.6rem
+}
+
+.res .score.w {
+    color: var(--red)
+}
+
+.join {
+    background: var(--red-deep);
+    color: #fff;
+    text-align: center
+}
+
+.join h2 {
+    margin-bottom: 1rem
+}
+
+.join p {
+    max-width: 46ch;
+    margin: 0 auto 2rem;
+    opacity: .92
+}
+
+footer {
+    padding: 2.5rem 0;
+    color: var(--muted);
+    font-size: .92rem
+}
+
+footer .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem
+}
+
+@media (max-width:860px) {
+    nav ul {
+        display: none
+    }
+
+    .news,
+    .two {
+        grid-template-columns: 1fr
+    }
+
+    .matchbar .wrap {
+        grid-template-columns: 1fr;
+        gap: .4rem
+    }
+
+    .matchbar time {
+        text-align: left
+    }
+
+    .hero::after {
+        display: none
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .hero h1 span {
+        animation: none
+    }
+
+    html {
+        scroll-behavior: auto
+    }
+}

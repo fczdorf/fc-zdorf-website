@@ -1,0 +1,10 @@
+:root{
+  --red:#D0111B; --red-deep:#8E0A12; --white:#fff;
+  --bg:#fff; --bg-alt:#F6F2F1; --ink:#1B1213; --muted:#6B5C5E; --line:#E6DCDB;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
