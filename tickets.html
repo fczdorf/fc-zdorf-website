@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Tickets | 1. FC Zdorf</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Figtree:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/root.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/tickets.css">
+</head>
+
+<body>
+
+    <header class="tk-head">
+        <nav>
+            <div class="wrap">
+                <a class="brand" href="./index.html" aria-label="1. FC Zdorf home">
+                    <img class="crest" src="./assets/FC Zdorf Logo Transparent.png" alt="">
+                    1. FC Zdorf
+                </a>
+                <ul>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#players">Players</a></li>
+                    <li><a href="#table">Table</a></li>
+                    <li><a href="#join">Join</a></li>
+                </ul>
+                <a class="btn btn-white" href="./index.html">Back to club</a>
+            </div>
+        </nav>
+
+        <div class="wrap tk-title">
+            <h1>Tickets</h1>
+            <ol class="steps" id="steps" aria-label="Progress">
+                <li data-step="tickets">Choose tickets</li>
+                <li data-step="checkout">Checkout</li>
+                <li data-step="done">Confirmation</li>
+            </ol>
+        </div>
+    </header>
+
+    <main>
+        <!-- Step 1: choose tickets -->
+        <section class="block" id="step-tickets">
+            <div class="wrap">
+                <h2 tabindex="-1">Home matches</h2>
+                <p class="tk-intro">Pick your tickets for one or more matches.</p>
+                <div class="tk-matches" id="matches"></div>
+            </div>
+        </section>
+
+        <!-- Step 2: checkout -->
+        <section class="block alt" id="step-checkout" hidden>
+            <div class="wrap">
+                <h2 tabindex="-1">Checkout</h2>
+                <div class="tk-checkout">
+                    <form id="checkout-form" novalidate>
+                        <fieldset>
+                            <legend>Your details</legend>
+                            <div class="tk-row">
+                                <label>First name
+                                    <input name="first" autocomplete="given-name" required>
+                                </label>
+                                <label>Last name
+                                    <input name="last" autocomplete="family-name" required>
+                                </label>
+                            </div>
+                            <label>Email address
+                                <input name="email" type="email" autocomplete="email" required
+                                    aria-describedby="email-hint">
+                            </label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Payment method</legend>
+                            <label class="tk-radio"><input type="radio" name="pay" value="card" checked> Credit or debit
+                                card</label>
+                            <label class="tk-radio"><input type="radio" name="pay" value="paypal"> PayPal</label>
+                            <label class="tk-radio"><input type="radio" name="pay" value="sepa"> SEPA direct
+                                debit</label>
+                        </fieldset>
+
+                        <label class="tk-check">
+                            <input type="checkbox" name="terms" required>
+                            <span>I accept the ticket terms and the stadium rules.</span>
+                        </label>
+
+                        <p class="tk-error" id="form-error" role="alert" hidden></p>
+
+                        <div class="tk-actions">
+                            <a class="btn btn-line" href="#tickets">Change tickets</a>
+                            <button class="btn btn-red" type="submit" id="pay-btn">Pay</button>
+                        </div>
+                    </form>
+
+                    <aside class="tk-summary" aria-labelledby="sum-title">
+                        <h3 id="sum-title">Your order</h3>
+                        <ul id="sum-lines"></ul>
+                        <dl id="sum-totals"></dl>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3: confirmation -->
+        <section class="block" id="step-done" hidden>
+            <div class="wrap">
+                <div class="tk-done">
+                    <h2 tabindex="-1">You're in</h2>
+                    <p id="done-msg"></p>
+                    <div class="tk-receipt">
+                        <h3 id="done-order"></h3>
+                        <ul id="done-lines"></ul>
+                        <dl id="done-totals"></dl>
+                    </div>
+                    <a class="btn btn-red" href="./index.html">Back to the club</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sticky basket bar (step 1 only) -->
+    <div class="cartbar" id="cartbar" hidden>
+        <div class="wrap">
+            <div class="cartbar-info"><b id="cart-count">0 tickets</b><span id="cart-total"></span></div>
+            <a class="btn btn-white" href="#checkout">Go to checkout</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="wrap">
+            <span>© 2026 1. FC Zdorf e.V.</span>
+        </div>
+    </footer>
+
+    <script src="./js/tickets.js"></script>
+</body>
+
+</html>

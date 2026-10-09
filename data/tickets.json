@@ -1,0 +1,16 @@
+{
+  "venue": "JFK Sportplatz",
+  "bookingFee": 0.0,
+  "maxPerCategory": 8,
+  "categories": [
+    { "id": "standard", "name": "Standard", "note": "Standard Ticket", "price": 0 }
+  ],
+  "matches": [
+    {
+      "id": "kreuzberg",
+      "opponent": "FC Kreuzberg United",
+      "kickoff": "2026-10-10T13:00",
+      "available": { "standard": 500 }
+    }
+  ]
+}

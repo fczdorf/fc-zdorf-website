@@ -1,6 +1,6 @@
 :root{
   --red:#D0111B; --red-deep:#8E0A12; --white:#fff;
-  --bg:#fff; --bg-alt:#F6F2F1; --ink:#1B1213; --muted:#6B5C5E; --line:#E6DCDB;
+  --bg:#fff; --bg-alt:#F6F2F1; --ink:#1B1213; --muted:#6B5C5E; --line:#E6DCDB; --muted-on-white:#4e4244;
   --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
   --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
 

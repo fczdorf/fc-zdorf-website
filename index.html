@@ -24,31 +24,31 @@
                     1. FC Zdorf
                 </a>
                 <ul>
-                    <li><a href="#news">News</a></li>
+                    <li><a href="./news.html">News</a></li>
+                    <li><a href="#players">Players</a></li>
                     <li><a href="#table">Table</a></li>
                     <li><a href="#join">Join</a></li>
                 </ul>
-                <a class="btn btn-white" href="#tickets">Tickets</a>
+                <a class="btn btn-white" href="./tickets.html">Tickets</a>
             </div>
         </nav>
 
         <div class="hero-body">
             <div class="wrap">
                 <h1><small>1. FC</small><span>Zdorf</span></h1>
-                <p class="lead">Red and white since the first whistle. Home matches every other Saturday at Sportplatz
-                    Zdorf.</p>
+                <p class="lead"></p>
                 <div class="cta">
-                    <a class="btn btn-white" href="#tickets">Get match tickets</a>
-                    <a class="btn btn-ghost" href="#table">See the table</a>
+                    <a class="btn btn-white" href="./tickets.html">Get match tickets</a>
+                    <a class="btn btn-ghost" href="#table">See matches</a>
                 </div>
             </div>
         </div>
 
-        <div class="matchbar" id="tickets">
+        <div class="matchbar" id="tickets" hidden>
             <div class="wrap">
                 <b>Next match</b>
-                <div class="teams">1. FC Zdorf<i>vs</i>SV Nordheim</div>
-                <time datetime="2026-10-17T15:00">Sat 17 Oct, 15:00 · Sportplatz Zdorf</time>
+                <div class="teams"></div>
+                <time></time>
             </div>
         </div>
     </header>
@@ -57,88 +57,24 @@
         <section class="block" id="news">
             <div class="wrap">
                 <h2>Latest news</h2>
-                <div class="news">
-                    <article class="card feature">
-                        <time datetime="2026-10-05">5 Oct 2026</time>
-                        <h3>Third straight win lifts Zdorf to second</h3>
-                        <p>A late header from the captain sealed a 2–1 away win and sent the travelling supporters home
-                            singing.</p>
-                        <a href="#">Read the report</a>
-                    </article>
-                    <article class="card">
-                        <time datetime="2026-10-02">2 Oct 2026</time>
-                        <h3>Youth trials open in November</h3>
-                        <p>Boys and girls aged 8 to 14 are welcome. No experience needed.</p>
-                        <a href="#join">Sign up</a>
-                    </article>
-                    <article class="card">
-                        <time datetime="2026-09-28">28 Sep 2026</time>
-                        <h3>New season shirts on sale</h3>
-                        <p>The home kit is red with a white collar. Available in the clubhouse.</p>
-                        <a href="#">Visit the shop</a>
-                    </article>
-                </div>
+                <div class="news" id="home-news" aria-live="polite"></div>
+                <p style="margin-top:2rem"><a class="btn btn-red" href="./news.html">All news</a></p>
+            </div>
+        </section>
+
+        <section class="block" id="players">
+            <div class="wrap">
+                <h2>Players</h2>
+                <div class="players-track" tabindex="0" aria-label="Player cards"></div>
+                <div class="players-dots" role="group" aria-label="Player carousel position"></div>
             </div>
         </section>
 
         <section class="block alt" id="table">
-            <div class="wrap two">
-                <div>
-                    <h2>League table</h2>
-                    <div style="overflow-x:auto">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Club</th>
-                                    <th class="num">P</th>
-                                    <th class="num">GD</th>
-                                    <th class="num">Pts</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>SV Nordheim</td>
-                                    <td class="num">8</td>
-                                    <td class="num">+11</td>
-                                    <td class="num">19</td>
-                                </tr>
-                                <tr class="us">
-                                    <td>2</td>
-                                    <td>1. FC Zdorf</td>
-                                    <td class="num">8</td>
-                                    <td class="num">+9</td>
-                                    <td class="num">18</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>TSV Eichwald</td>
-                                    <td class="num">8</td>
-                                    <td class="num">+4</td>
-                                    <td class="num">15</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>FC Bergau</td>
-                                    <td class="num">8</td>
-                                    <td class="num">+1</td>
-                                    <td class="num">12</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div class="wrap">
                 <div>
                     <h2>Recent results</h2>
-                    <div class="res"><span class="d">5 Oct</span><span>FC Bergau – 1. FC Zdorf</span><span
-                            class="score w">1 : 2</span></div>
-                    <div class="res"><span class="d">28 Sep</span><span>1. FC Zdorf – TSV Eichwald</span><span
-                            class="score w">3 : 0</span></div>
-                    <div class="res"><span class="d">21 Sep</span><span>Union Kellen – 1. FC Zdorf</span><span
-                            class="score w">0 : 1</span></div>
-                    <div class="res"><span class="d">14 Sep</span><span>1. FC Zdorf – SV Nordheim</span><span
-                            class="score">1 : 1</span></div>
+                    <div id="results"></div>
                 </div>
             </div>
         </section>
@@ -146,9 +82,9 @@
         <section class="block join" id="join">
             <div class="wrap">
                 <h2>Play for Zdorf</h2>
-                <p>Seniors, juniors and a walking-football group. Come to a training session and wear whatever you have.
+                <p>We're looking for anyone to join the club!
                 </p>
-                <a class="btn btn-white" href="#">Request a trial</a>
+                <a class="btn btn-white" href="mailto:fc.zdorf@gmail.com">Join</a>
             </div>
         </section>
     </main>
@@ -156,10 +92,11 @@
     <footer>
         <div class="wrap">
             <span>© 2026 1. FC Zdorf e.V.</span>
-            <span>Sportplatz Zdorf · Vereinsweg 1</span>
         </div>
     </footer>
 
 </body>
+
+<script src="./js/index.js"></script>
 
 </html>
