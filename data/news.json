@@ -8,5 +8,17 @@
       { "src": "./assets/news/igexport-DeJnOscIFq_.jpg", "alt": "Players celebrating the winning goal", "caption": "" }
     ],
     "content": "data/articles/upcoming-kreuz-utd-match.md"
+  },
+  {
+    "id": "12862901284",
+    "date": "2026-10-10",
+    "title": "Friendly match against FC Kreuzberg United",
+    "summary": "The results of our match against Kreuzberg United.",
+    "images": [
+      { "src": "./assets/news/image2.jpeg", "alt": "Players celebrating the winning goal", "caption": "Throw in by Paul" },
+      { "src": "./assets/news/image3.jpeg", "alt": "Players celebrating the winning goal", "caption": "" },
+      { "src": "./assets/news/image1.jpeg", "alt": "Players celebrating the winning goal", "caption": "Shot by Illian" }
+    ],
+    "content": "data/articles/match-against-kreuzberg.md"
   }
 ]

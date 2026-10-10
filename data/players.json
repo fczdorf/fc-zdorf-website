@@ -1,4 +1,4 @@
 [
-  { "name": "Paul Winterberg", "number": 1,  "position": "Captain - Striker", "photo": "./assets/players/pw.png" },
-  { "name": "Arthur East", "number": 6, "position": "Midfielder", "photo": "./assets/players/ae.png" }
+  { "name": "Paul", "number": 1,  "position": "Captain - Striker", "photo": "./assets/players/pw.png" },
+  { "name": "Arthur", "number": 6, "position": "Midfielder", "photo": "./assets/players/ae.png" }
 ]
